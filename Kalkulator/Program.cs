@@ -8,14 +8,68 @@ namespace Kalkulator
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
+            
+            String FirstNumber = "", SecondNumber = "";
+            
+
+            int FirstNum = 0;
+            int SecondNum = 0;
+            try
+            {
+                Console.WriteLine("Podaj Pierwsza Liczbe 0-10: ");
+                FirstNumber = Console.ReadLine();
+                FirstNum = Convert.ToInt32(FirstNumber);
+                
+                    }
+            catch(SystemException)
+            {
+
+               
+                Console.WriteLine("nie wprowadziles poprawnie pierwszej liczby");
+                Console.WriteLine("twoja liczba zostanie pominieta");
+                Console.WriteLine("nacisnij przycisk");
+                Console.ReadKey();
+            }
+            try
+            {
+                Console.WriteLine("Podaj druga liczbe 0-10: ");
+                SecondNumber = Console.ReadLine();
+                SecondNum = Convert.ToInt32(SecondNumber);
+            }
+            catch (SystemException)
+            {
+                Console.WriteLine("nie wprowadziles poprawnie drugiej liczby");
+                Console.WriteLine("twoja liczba zostanie pominieta");
+                Console.WriteLine("nacisnij przycisk");
+                Console.ReadKey();
+            }
+
+            if (FirstNum > 10 || FirstNum < 0)
+            {
+                Console.WriteLine("wprowadziles pierwsza liczbe mniejsza od 0 lub wieksza niz 10 ");
+                Console.WriteLine("twoja liczba zostanie pominieta");
+                Console.ReadKey();
+
+            }
+            else if (SecondNum > 10 || SecondNum < 0)
+            {
+                Console.WriteLine("wprowadziles pierwsza liczbe mniejsza od 0 lub wieksza niz 10 ");
+                Console.WriteLine("twoja liczba zostanie pominieta");
+                Console.ReadKey();
+            }
+
+            int Sum = FirstNum + SecondNum;
+            Console.WriteLine("Wynik dodawania to :" + Sum + "");
             Console.ReadKey();
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+        }
+
+            
+
         }
     }
-}
+
+    
+
